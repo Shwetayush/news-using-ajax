@@ -1,6 +1,3 @@
-function remove_image(){
-  document.getElementById('img').remove();
-}
 let source = 'bbc-news';
 let apiKey = '5c118d2ce51e43c8b4146412a18a7283'
 let newsAccordion = document.getElementById('newsAccordion');
