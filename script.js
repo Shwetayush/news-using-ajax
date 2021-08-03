@@ -4,7 +4,6 @@ function remove_image() {
 const closeBtn = document.getElementById('close-btn');
 closeBtn.addEventListener('click', () => {
   document.getElementById('img').remove();
-  document.getElementById('collapse0').remove();
 });
 let source = 'bbc-news';
 let apiKey = '5c118d2ce51e43c8b4146412a18a7283'
@@ -44,3 +43,19 @@ xhr.onload = function () {
 }
 
 xhr.send()
+
+let search = document.getElementById('searchTxt');
+search.addEventListener("input", function () {
+  let inputVal = search.value.toLowerCase();
+
+  let noteCards = document.getElementsByClassName('card');
+  Array.from(noteCards).forEach(function (element, index) {
+    let cardTxt = element.getElementsByTagName("h2")[0].innerText;
+    if (cardTxt.includes(inputVal)) {
+      element.style.display = "block";
+    }
+    else {
+      element.style.display = "none";
+    }
+  })
+})
