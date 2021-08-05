@@ -1,10 +1,17 @@
 function remove_image() {
   document.getElementById('img').remove();
 }
+
+
 const closeBtn = document.getElementById('close-btn');
 closeBtn.addEventListener('click', () => {
   document.getElementById('img').remove();
 });
+const closeBtn1 = document.getElementById('close-btn1');
+closeBtn1.addEventListener('click', () => {
+  document.getElementById('rot1').remove();
+});
+
 let source = 'bbc-news';
 let apiKey = '5c118d2ce51e43c8b4146412a18a7283'
 let newsAccordion = document.getElementById('newsAccordion');
@@ -20,7 +27,7 @@ xhr.onload = function () {
     let newsHtml = "";
     articles.forEach(function (element, index) {
       let news = `<div class="card">
-                            <div class="card-header" id="heading${index}">
+                          <div class="card-header" id="heading${index}">
                                 <h2 class="mb-0">
                                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse${index}"
                                     aria-expanded="false" aria-controls="collapse${index}">
